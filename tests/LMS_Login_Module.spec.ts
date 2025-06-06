@@ -1,14 +1,7 @@
 import {test, expect} from '@playwright/test';
 import credentials from './credentials.json';
-import { 
-    modules, 
-    submodules_requests, 
-    submodules_templates,
-    new_task_types,
-    tag_type,
-    answer_type
-} from './modules.js';  
-import { text } from 'stream/consumers';
+
+
 
 
 
