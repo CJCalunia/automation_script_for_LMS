@@ -30,3 +30,14 @@ export const new_task_types = [
     "Answer Type",
     "Color"
 ]
+
+export const tag_type = [
+    "Lecture",
+    "Laboratory",
+]
+
+export const answer_type = [
+    "Text/File",
+    "Questionnaires",
+    "File",
+]

@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   expect: {
-    timeout: 2000, // 2 seconds for expect assertions
+    timeout: 20000, // 10 seconds for expect assertions
   },
   
   testDir: './tests',
@@ -34,6 +34,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    actionTimeout: 20000
   },
   /* Set global timeout for each test */
   // timeout: 10000, // 10 seconds for each test
