@@ -88,6 +88,8 @@ test.describe('Header Page Test', () => {
             // maskColor: 'white'
         });
     });
+    
+    // Have an issue, Late show of header
     test("PT: Notification", async ({page}) => {
         try {
             await page.waitForLoadState('load')
@@ -105,6 +107,7 @@ test.describe('Header Page Test', () => {
          
 
     })
+    // Have an issue, Late show of header
     test("PT: Profile", async({page}) => {
         try {
             await page.waitForLoadState('load')
@@ -120,6 +123,8 @@ test.describe('Header Page Test', () => {
             console.log('Cannot detect Notification', error);
         }
     });
+
+    
     test("PT: Modules", async ({page}) => {
         await page.waitForLoadState('load');
         for (const module of modules){
