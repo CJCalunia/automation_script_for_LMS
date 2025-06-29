@@ -1,0 +1,30 @@
+// import { test, expect } from '@playwright/test';
+
+// test('Basic Navigation Test', async ({ page }) => {
+//   await page.goto('https://portal.sandbox.centralizedinc.com/client-login?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6NDksIm5hbWUiOiJMZWFybmluZyBNYW5hZ2VtZW50IFN5c3RlbSAoT2ZmaWNpYWwpIiwiaWNvbiI6Imh0dHBzOi8vYXR0YWNobWVudC5zYW5kYm94LmNlbnRyYWxpemVkaW5jLmNvbS9jbXMvMTcyNjAzNDgxMTE2Ni5wbmciLCJnZW5lcmF0ZWQiOiIyMDI1LTA2LTE4VDAwOjIwOjE2LjEwOVoiLCJzdWNjZXNzUmVkaXJlY3RVUkwiOiJodHRwczovL2xtcy5zYW5kYm94LmNlbnRyYWxpemVkaW5jLmNvbS9hdXRoZW50aWNhdGlvbi8iLCJmYWlsdXJlUmVkaXJlY3RVUkwiOiJodHRwczovL2xtcy5zYW5kYm94LmNlbnRyYWxpemVkaW5jLmNvbS9hdXRoZW50aWNhdGlvbi8iLCJpYXQiOjE3NTAyMDYwMTYsImV4cCI6MTc1MDI5MjQxNn0.D7bV7GFGhhaKiSCx-V2mw8NdZMdi-nGHbK1nk_d1kZo');
+//   await page.getByRole('textbox', { name: 'Email' }).click();
+//   await page.getByRole('textbox', { name: 'Email' }).fill('wgalas@ds.com');
+//   await page.getByRole('textbox', { name: 'Email' }).press('Tab');
+//   await page.getByRole('textbox', { name: 'Password' }).fill('password');
+//   await page.getByRole('button', { name: 'Login' }).click();
+//   await page.getByRole('menuitem', { name: 'profile Classes' }).click();
+//   await page.getByRole('menuitem', { name: 'user Student Record' }).click();
+//   await page.locator('div').filter({ hasText: /^Templates$/ }).click();
+//   await page.getByRole('menuitem', { name: 'hdd Course Content' }).click();
+//   await page.locator('div').filter({ hasText: /^Templates$/ }).click();
+//   await page.getByRole('menuitem', { name: 'book Lesson' }).click();
+//   await page.locator('div').filter({ hasText: /^Templates$/ }).click();
+//   await page.getByRole('menuitem', { name: 'table Rubric' }).click();
+//   await page.locator('div').filter({ hasText: /^Templates$/ }).click();
+//   await page.getByRole('menuitem', { name: 'question-circle Questionnaire' }).click();
+//   await page.locator('div').filter({ hasText: /^Templates$/ }).click();
+//   await page.getByRole('menuitem', { name: 'trophy Game' }).click();
+//   await page.locator('div').filter({ hasText: /^Templates$/ }).click();
+//   await page.getByRole('menuitem', { name: 'file-protect Task' }).click();
+//   await page.locator('div').filter({ hasText: /^Requests$/ }).click();
+//   await page.getByRole('menuitem', { name: 'exception Excuse' }).click();
+//   await page.locator('div').filter({ hasText: /^Requests$/ }).click();
+//   await page.getByRole('menuitem', { name: 'carry-out Appointment' }).click();
+//   await page.getByRole('menuitem', { name: 'poweroff Logout' }).click();
+//   await page.getByRole('button', { name: 'Continue' }).click();
+// });

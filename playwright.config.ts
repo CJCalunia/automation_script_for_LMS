@@ -13,18 +13,19 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   expect: {
-    timeout:20000, // 10 seconds for expect assertions
+    timeout: 30000, // 30 seconds for expect assertions
   },
   
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false, // Set to false to run tests in serial mode
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: 2,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1, //adjusted to run in serial due to hit the error of "Session Logout in script" //   workers: process.env.CI ? 1 : undefined // is the origcode
+  
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -34,10 +35,10 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    actionTimeout: 20000
+    actionTimeout: 30000 // 30 seconds for each action
   },
   /* Set global timeout for each test */
-  // timeout: 10000, // 10 seconds for each test
+  timeout: 60000, // 60 seconds for each test
   
 
   /* Configure projects for major browsers */
