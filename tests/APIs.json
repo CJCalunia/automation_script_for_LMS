@@ -1,0 +1,19 @@
+[
+    {
+        "token": "management/v1.0/auth/handshake/token",
+        "terms": "management/v1.0/constants/terms",
+        "profanities" : "lms/v1.0/profanities",
+        "notifications": "lms/v1.0/notifications",
+        "me": "iam/v1.0/users/me",
+        "get-classes" : "lms/v1.0/faculty-loads/get-classes",
+        "get-faculties" : "management/v1.0/faculties",
+        "level-codes" : "lms/v1.0/faculties/education-level-codes",
+        "education-levels" : "/management/v1.0/constants/education-level",
+        "current-calendar": "management/v1.0/calendars/current",
+        "tasks": "lms/v1.0/posted-tasks/checking",
+        "campus": "management/v1.0/campuses",
+        "announcements": "lms/v1.0/announcements",
+        "departments" : "lms/v1.0/events/department-events/",
+        "schedules": "lms/v1.0/faculty-loads/get-schedules/"
+    }
+]

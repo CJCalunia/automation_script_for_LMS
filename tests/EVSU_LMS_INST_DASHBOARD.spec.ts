@@ -1,10 +1,14 @@
 import {test, expect} from '@playwright/test';
 import credentials from './credentials.json';
+import apis from './APIs.json';
+import { api_list_name } from './api_name.js';
 import { 
     modules, 
     submodules_requests, 
     submodules_templates
 } from './modules.js'
+
+
 
  
 test.describe('Templates: Check All Buttons if visible', () => {
@@ -279,5 +283,36 @@ test.describe('Templates: Check All Buttons if visible', () => {
 
          console.log('\x1b[32m✔ Students page loaded\x1b[0m');
     });
+});
 
+test.describe('Templates: Check all API responses', () => { 
+    test.beforeEach(async ({ page }) => {
+        await page.goto(credentials[0].lms_url_instructor);
+        await page.waitForLoadState('load');
+        await expect(page.locator('.md\\:grid')).toContainText('Login');
+        const loginElement = page.getByRole('textbox', { name: 'Email' });
+        const passwordElement = page.getByPlaceholder('Enter Password');
+        while (await loginElement.inputValue() !== credentials[0].lms_email_instructor) {
+            await loginElement.click();
+            await loginElement.fill(credentials[0].lms_email_instructor);
+        }
+        await passwordElement.click();
+        await passwordElement.fill(credentials[0].default_password);
+        await page.getByRole('button', { name: 'Login' }).click();
+        console.log(`Waiting for the page to load...`);
+        const api_response = await page.waitForResponse(response => response.url().includes('/lms/v1.0/faculty-loads/get-schedules') && response.status() === 200);
+        expect(api_response.status()).toBe(200);
+        await expect(page.getByText('For Checking')).toBeVisible();
+        console.log('\x1b[32m✔ Logged in as instructor\x1b[0m');
+    });
+    test('APIs Dashboard:', {tag: ['@instructor', '@dashboard', '@api']},
+    async ({ page, request }) => {
+        await page.waitForLoadState('load');
+        for (const [key, url] of Object.entries(apis[0])) {
+            let fullUrl = url.startsWith('http') ? url : `https://api.evsu-beta.centralizedinc.com/${url}`;
+            let api_response = await request.get(fullUrl);
+            expect(api_response.status()).toBe(200);
+            console.log(`\x1b[32m✔ API ${key} is working successfully\x1b[0m`);
+        }
+    });
 });
